@@ -2,8 +2,19 @@
   "name": "react-native-sfsymbols",
   "version": "1.0.0",
   "description": "Use SF Symbols in iOS apps",
-  "main": "build/index.js",
+  "main": "lib/index.js",
+  "files": [
+    "src",
+    "lib",
+    "ios",
+    "react-native-sfsymbols.podspec"
+  ],
   "scripts": {
+    "prepublish": "yarn run build",
+    "prettier": "prettier --write '**/*.{json,md,js,jsx,ts,tsx}'",
+    "lint": "yarn run eslint",
+    "eslint": "eslint --fix 'src/**/*.{ts,tsx}'",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,15 +27,28 @@
     "symbol",
     "ios"
   ],
-  "author": "Birkir Gudjonsson",
+  "author": "Birkir Gudjonsson <birkir.gudjonsson@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-native": "^0.63.3"
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/birkir/react-native-sfsymbols/issues"
+  },
+  "homepage": "https://github.com/birkir/react-native-sfsymbols#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/birkir/react-native-sfsymbols.git"
   },
   "devDependencies": {
     "@types/react": "^16.9.51",
     "@types/react-native": "^0.63.25",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "eslint": "^7.10.0",
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2",
     "typescript": "^4.0.3"
   }
 }
