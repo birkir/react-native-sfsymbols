@@ -1,0 +1,30 @@
+{
+  "name": "react-native-sfsymbols",
+  "version": "1.0.0",
+  "description": "Use SF Symbols in iOS apps",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sf",
+    "symbols",
+    "icons",
+    "react",
+    "native",
+    "sfsymbols",
+    "symbol",
+    "ios"
+  ],
+  "author": "Birkir Gudjonsson",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-native": "^0.63.3"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.51",
+    "@types/react-native": "^0.63.25",
+    "typescript": "^4.0.3"
+  }
+}
