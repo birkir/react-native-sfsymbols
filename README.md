@@ -4,6 +4,8 @@ Use SF Symbols in React Native for iOS
 
 **Note**: iOS 14 only
 
+![iOS Simulator with icons example](https://media.giphy.com/media/5gB4qLjkuYwVn10O77/giphy.gif)
+
 ## Props
 
 ### name
@@ -34,6 +36,22 @@ export function Example() {
     />
   );
 }
+```
+
+They can be animated with Animated
+
+```jsx
+import { Animated } from 'react-native';
+import { SFSymbol } from 'react-native-sfsymbols';
+
+const AnimatedSFSymbol = Animated.createAnimatedComponent(SFSymbol);
+
+<AnimatedSFSymbol
+  name="sun.min.fill"
+  style={{
+    opacity: new Animated.Value(1)
+  }}
+/>
 ```
 
 ## TODO
