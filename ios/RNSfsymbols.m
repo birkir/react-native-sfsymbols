@@ -1,18 +1,22 @@
-#import "RNSFSymbol.h"
+#import "RNSfsymbols.h"
 #import "UISFSymbolImageView.h"
-#import <UIKit/UIKit.h>
+//#import <UIKit/UIKit.h>
 #import <React/RCTViewManager.h>
 
-@interface RNSFSymbolManager : RCTViewManager
+@interface RNSfsymbolsManager : RCTViewManager
 @end
 
-@implementation RNSFSymbolManager
+@implementation RNSfsymbolsManager
 
-RCT_EXPORT_MODULE(RNSFSymbol)
+- (dispatch_queue_t)methodQueue
+{
+    return dispatch_get_main_queue();
+}
+RCT_EXPORT_MODULE(RNSfsymbols)
 
 - (UIView *)view
 {
-  UISFSymbolImageView *imageView = [[UISFSymbolImageView alloc] initWithImage:image];
+  UISFSymbolImageView *imageView = [[UISFSymbolImageView alloc] init];
   // @todo customize content mode?
   [imageView setContentMode:UIViewContentModeScaleAspectFit];
   return imageView;
@@ -31,7 +35,7 @@ RCT_CUSTOM_VIEW_PROPERTY(systemName, NSString, UISFSymbolImageView)
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(color, UIColor, UISFSymbolImageView) {
-  [view setTintColor:json];
+  [view setTintColor:[RCTConvert UIColor:json]];
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(scale, NSString, UISFSymbolImageView) {
@@ -45,3 +49,4 @@ RCT_CUSTOM_VIEW_PROPERTY(weight, NSString, UISFSymbolImageView) {
 }
 
 @end
+  
