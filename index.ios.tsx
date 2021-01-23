@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  processColor,
   requireNativeComponent,
   StyleProp,
   ViewStyle,
@@ -37,13 +36,13 @@ type NativeSFSymbolProps = Omit<SFSymbolProps, "color" | "name"> & {
   systemName: string;
 };
 
-const RNSFSymbol = requireNativeComponent<NativeSFSymbolProps>("RNSFSymbol");
+const RNSFSymbol = requireNativeComponent<NativeSFSymbolProps>("RNSfsymbols");
 
 export class SFSymbol extends React.Component<SFSymbolProps> {
   render() {
     const { name, color, ...props } = this.props;
     return (
-      <RNSFSymbol {...props} systemName={name} color={processColor(color)} />
+      <RNSFSymbol {...props} systemName={name} color={color} />
     );
   }
 }
