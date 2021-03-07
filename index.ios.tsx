@@ -1,25 +1,21 @@
-import React from "react";
-import {
-  requireNativeComponent,
-  StyleProp,
-  ViewStyle,
-} from "react-native";
+import React from 'react';
+import { requireNativeComponent, StyleProp, ViewStyle } from 'react-native';
 
 export enum SFSymbolWeight {
-  ULTRALIGHT = "ultralight",
-  LIGHT = "light",
-  THIN = "thin",
-  REGULAR = "regular",
-  MEDIUM = "medium",
-  SEMIBOLD = "semibold",
-  BOLD = "bold",
-  HEAVY = "heavy",
+  ULTRALIGHT = 'ultralight',
+  LIGHT = 'light',
+  THIN = 'thin',
+  REGULAR = 'regular',
+  MEDIUM = 'medium',
+  SEMIBOLD = 'semibold',
+  BOLD = 'bold',
+  HEAVY = 'heavy',
 }
 
 export enum SFSymbolScale {
-  SMALL = "small",
-  MEDIUM = "medium",
-  LARGE = "large",
+  SMALL = 'small',
+  MEDIUM = 'medium',
+  LARGE = 'large',
 }
 
 interface SFSymbolProps {
@@ -31,18 +27,16 @@ interface SFSymbolProps {
   multicolor?: boolean;
 }
 
-type NativeSFSymbolProps = Omit<SFSymbolProps, "color" | "name"> & {
-  color: number | symbol;
+type NativeSFSymbolProps = Omit<SFSymbolProps, 'color' | 'name'> & {
+  color: string | symbol;
   systemName: string;
 };
 
-const RNSFSymbol = requireNativeComponent<NativeSFSymbolProps>("RNSfsymbols");
+const RNSFSymbol = requireNativeComponent<NativeSFSymbolProps>('RNSfsymbols');
 
 export class SFSymbol extends React.Component<SFSymbolProps> {
   render() {
     const { name, color, ...props } = this.props;
-    return (
-      <RNSFSymbol {...props} systemName={name} color={color} />
-    );
+    return <RNSFSymbol {...props} systemName={name} color={color} />;
   }
 }
