@@ -45,6 +45,7 @@ export function Example() {
       name="thermometer.sun.fill"
       weight={SFSymbolWeight.SEMIBOLD}
       scale={SFSymbolScale.LARGE}
+      color="red"
       multicolor={true | false}
       style={{ width: 32, height: 32 }}
     />
@@ -73,6 +74,10 @@ const AnimatedSFSymbol = Animated.createAnimatedComponent(SFSymbol);
 ### name
 
 The symbol name you want to display, can be seen in the SF Symbols application.
+
+## color
+
+The color of the symbol written as a hex or color value.
 
 ### weight
 
