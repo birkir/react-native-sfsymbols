@@ -33,7 +33,7 @@ interface SFSymbolProps {
 }
 
 type NativeSFSymbolProps = Omit<SFSymbolProps, "color" | "name"> & {
-  color: number | symbol;
+  iconColor: number | symbol;
   systemName: string;
 };
 
@@ -43,7 +43,7 @@ export class SFSymbol extends React.Component<SFSymbolProps> {
   render() {
     const { name, color, ...props } = this.props;
     return (
-      <RNSFSymbol {...props} systemName={name} color={processColor(color)} />
+      <RNSFSymbol {...props} systemName={name} iconColor={processColor(color)} />
     );
   }
 }

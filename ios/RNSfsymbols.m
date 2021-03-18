@@ -34,7 +34,7 @@ RCT_CUSTOM_VIEW_PROPERTY(systemName, NSString, UISFSymbolImageView)
   [view updateImage];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(color, UIColor, UISFSymbolImageView) {
+RCT_CUSTOM_VIEW_PROPERTY(iconColor, UIColor, UISFSymbolImageView) {
   [view setTintColor:[RCTConvert UIColor:json]];
 }
 

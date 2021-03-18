@@ -7,7 +7,7 @@
 @property (assign) BOOL multicolor;
 @property (strong, nonatomic) NSString *weight;
 @property (strong, nonatomic) NSString *scale;
-@property (strong, nonatomic) UIColor *color;
+@property (strong, nonatomic) UIColor *iconColor;
 @property (strong, nonatomic) NSString *systemName;
 
 -(void)updateImage;
