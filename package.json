@@ -3,7 +3,7 @@
   "version": "1.0.3",
   "description": "Use SF Symbols in iOS apps",
   "main": "lib/index.ios.js",
-  "typings": "lib/index.d.ts",
+  "typings": "lib/index.ios.d.ts",
   "files": [
     "src",
     "lib",
