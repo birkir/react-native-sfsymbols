@@ -4,6 +4,7 @@
   "description": "Use SF Symbols in iOS apps",
   "main": "lib/index.ios.js",
   "typings": "lib/index.ios.d.ts",
+  "react-native": "src/index.ios.ts",
   "files": [
     "src",
     "lib",
