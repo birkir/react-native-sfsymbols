@@ -5,7 +5,7 @@ Use SF Symbols in React Native for iOS
 - ⚠️ iOS 14+ only ([& more soon](https://github.com/birkir/react-native-sfsymbols/issues/1))
 - 💔 [Android or other platforms cannot be supported](https://github.com/birkir/react-native-sfsymbols/issues/3)
 
-![iOS Simulator with icons example](https://media.giphy.com/media/5gB4qLjkuYwVn10O77/giphy.gif)
+![iOS Simulator with icons example](https://media.giphy.com/media/5gB4qLjkuYwVn10O77/giphy.gif) ![Example app](https://i.ibb.co/F03LBxj/Simulator-Screen-Shot-i-Phone-12-2021-06-23-at-11-47-54.png)
 
 ## Setup
 
