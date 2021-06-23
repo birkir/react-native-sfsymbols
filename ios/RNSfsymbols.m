@@ -17,8 +17,6 @@ RCT_EXPORT_MODULE(RNSfsymbols)
 - (UIView *)view
 {
   UISFSymbolImageView *imageView = [[UISFSymbolImageView alloc] init];
-  // @todo customize content mode?
-  [imageView setContentMode:UIViewContentModeScaleAspectFit];
   return imageView;
 }
 
@@ -34,8 +32,22 @@ RCT_CUSTOM_VIEW_PROPERTY(systemName, NSString, UISFSymbolImageView)
   [view updateImage];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(iconColor, UIColor, UISFSymbolImageView) {
-  [view setTintColor:[RCTConvert UIColor:json]];
+RCT_CUSTOM_VIEW_PROPERTY(size, Number, UISFSymbolImageView)
+{
+  [view setSize:json];
+  [view updateImage];
+}
+
+RCT_CUSTOM_VIEW_PROPERTY(resizeMode, NSstring, UISFSymbolImageView)
+{
+  [view setResizeMode:[RCTConvert UIViewContentMode:json]];
+  [view updateImage];
+}
+
+RCT_CUSTOM_VIEW_PROPERTY(iconColor, Number, UISFSymbolImageView) {
+  UIColor *color = [RCTConvert UIColor:json];
+  [view setIconColor:color];
+  [view updateImage];
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(scale, NSString, UISFSymbolImageView) {

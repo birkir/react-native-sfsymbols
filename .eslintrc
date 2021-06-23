@@ -1,14 +1,12 @@
 {
   "root": true,
-  "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
   "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "@react-native-community",
+    "plugin:prettier/recommended"
   ],
   "rules": {
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "no-shadow": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-shadow": ["error"]
   }
 }

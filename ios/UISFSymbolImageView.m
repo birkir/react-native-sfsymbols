@@ -6,7 +6,14 @@
   if (@available(iOS 13.0, *)) {
     UIImageSymbolWeight weight = UIImageSymbolWeightUnspecified;
     UIImageSymbolScale scale = UIImageSymbolScaleDefault;
+    CGFloat size = [UIFont systemFontSize];
+      
+    if (_size != nil) {
+      size = [_size doubleValue];
+    }
 
+    [self setContentMode:_resizeMode];
+      
     if ([_weight isEqualToString:@"ultralight"]) {
       weight = UIImageSymbolWeightUltraLight;
     } else if ([_weight isEqualToString:@"light"]) {
@@ -33,16 +40,20 @@
       scale = UIImageSymbolScaleLarge;
     }
 
-    UIImageSymbolConfiguration *configuration = [UIImageSymbolConfiguration configurationWithPointSize:[UIFont systemFontSize] weight:weight scale:scale];
+    UIImageSymbolConfiguration *configuration = [UIImageSymbolConfiguration configurationWithPointSize:size weight:weight scale:scale];
     UIImage *image = [UIImage systemImageNamed:_systemName withConfiguration:configuration];
-
+    
     if (_multicolor) {
-      [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+      self.tintColor = nil;
+      if (_iconColor != nil) {
+        self.image = [image imageWithTintColor:_iconColor renderingMode:UIImageRenderingModeAlwaysOriginal];
+      } else {
+        self.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+      }
     } else {
-      [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+      self.tintColor = _iconColor;
+      self.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     }
-
-    [self setImage:image];
   }
 }
 

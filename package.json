@@ -1,14 +1,14 @@
 {
   "name": "react-native-sfsymbols",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Use SF Symbols in iOS apps",
-  "main": "lib/index.ios.js",
-  "typings": "lib/index.ios.d.ts",
-  "react-native": "src/index.ios.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "src",
     "lib",
     "ios",
+    "android",
     "react-native-sfsymbols.podspec"
   ],
   "keywords": [
@@ -36,22 +36,41 @@
     "prettier": "prettier --write '**/*.{json,md,js,jsx,ts,tsx}'",
     "lint": "yarn run eslint",
     "eslint": "eslint --fix 'src/**/*.{ts,tsx}'",
+    "clean": "rm -rf lib",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
   },
   "devDependencies": {
-    "@types/react-native": "^0.63.25",
-    "@types/react": "^16.9.51",
-    "@typescript-eslint/eslint-plugin": "^4.4.0",
-    "@typescript-eslint/parser": "^4.4.0",
-    "eslint": "^7.10.0",
-    "husky": "^4.3.0",
-    "prettier": "^2.1.2",
-    "react-native": "^0.63.0",
-    "typescript": "^4.0.3"
+    "@babel/core": "^7.14.3",
+    "@babel/runtime": "^7.14.0",
+    "@react-native-community/eslint-config": "^3.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/react-native": "^0.64.10",
+    "@types/react-test-renderer": "^17.0.1",
+    "@types/react": "^17.0.11",
+    "babel-jest": "^27.0.5",
+    "eslint": "^7.29.0",
+    "husky": "^6.0.0",
+    "metro-react-native-babel-preset": "^0.66.0",
+    "prettier": "^2.3.1",
+    "react": "^17.0.2",
+    "react-native": "^0.64.2",
+    "react-test-renderer": "^17.0.2",
+    "typescript": "^4.3.4"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
