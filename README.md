@@ -73,7 +73,7 @@ const AnimatedSFSymbol = Animated.createAnimatedComponent(SFSymbol);
 
 The symbol name you want to display, can be seen in the [SF Symbols application](https://developer.apple.com/sf-symbols/).
 
-## color (optional)
+### color (optional)
 
 The color of the symbol written as a hex or color value. PlatformColor and DynamicColorIOS also works.
 
@@ -104,15 +104,15 @@ medium
 large
 ```
 
-## multicolor (optional)
+### multicolor (optional)
 
 Enable multicolor, don't pass a "color" for it to work properly.
 
-## size (optional)
+### size (optional)
 
 Font size of the icon as a number.
 
-## resizeMode (optional)
+### resizeMode (optional)
 
 Resize mode of the icon. When "size" is given, it will default to "center" otherwise "scale-aspect-fill".
 
