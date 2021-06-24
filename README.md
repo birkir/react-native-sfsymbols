@@ -33,20 +33,18 @@ _Don't forget to run `cd ios && pod install && cd ..` after that !_
 ## Usage
 
 ```jsx
-import {
-  SFSymbol,
-  SFSymbolWeight,
-  SFSymbolScale,
-} from "react-native-sfsymbols";
+import { SFSymbol } from "react-native-sfsymbols";
 
 export function Example() {
   return (
     <SFSymbol
       name="thermometer.sun.fill"
-      weight={SFSymbolWeight.SEMIBOLD}
-      scale={SFSymbolScale.LARGE}
+      weight="semibold"
+      scale="large"
       color="red"
-      multicolor={true | false}
+      size={16}
+      resizeMode="center"
+      multicolor={false}
       style={{ width: 32, height: 32 }}
     />
   );
@@ -73,20 +71,66 @@ const AnimatedSFSymbol = Animated.createAnimatedComponent(SFSymbol);
 
 ### name
 
-The symbol name you want to display, can be seen in the SF Symbols application.
+The symbol name you want to display, can be seen in the [SF Symbols application](https://developer.apple.com/sf-symbols/).
 
-## color
+## color (optional)
 
-The color of the symbol written as a hex or color value.
+The color of the symbol written as a hex or color value. PlatformColor and DynamicColorIOS also works.
 
-### weight
+### weight (optional)
 
-The (font) weight of the symbol. Light, regular, medium, bold, etc.
+The (font) weight of the symbol.
 
-### scale
+```
+ultralight
+light
+thin
+regular
+medium
+semibold
+bold
+heavy
+```
 
-The scale of the symbol, it will optimise the thickness of detail strokes in the icon for different sizes. Currently small, medium and large.
+Multicolor has issues with this "thin" weight.
 
-### multicolor
+### scale (optional)
 
-Enable multicolor or not. Seems to only work with 14.2, and only some symbols.
+The scale of the symbol, it will optimise the thickness of detail strokes in the icon for different sizes.
+
+```
+small
+medium
+large
+```
+
+### multicolor (optional)
+
+Enable multicolor, don't pass a "color" for it to work properly.
+
+## size (optional)
+
+Font size of the icon as a number.
+
+## resizeMode (optional)
+
+Resize mode of the icon. When "size" is given, it will default to "center" otherwise "scale-aspect-fill".
+
+```
+scale-to-fill
+scale-aspect-fit
+scale-aspect-fill
+redraw
+center
+top
+bottom
+left
+right
+top-left
+top-right
+bottom-left
+bottom-right
+cover
+contain
+stretch
+```
