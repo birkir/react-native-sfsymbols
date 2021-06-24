@@ -104,7 +104,7 @@ medium
 large
 ```
 
-### multicolor (optional)
+## multicolor (optional)
 
 Enable multicolor, don't pass a "color" for it to work properly.
 
