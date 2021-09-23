@@ -56,7 +56,7 @@ type ResizeMode =
   | "contain"
   | "stretch";
 
-interface SFSymbolProps {
+export interface SFSymbolProps {
   name: string;
   color?: ColorValue;
   style?: StyleProp<ViewStyle>;
