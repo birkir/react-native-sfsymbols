@@ -26,7 +26,7 @@ export enum SFSymbolScale {
   LARGE = "large",
 }
 
-type SymbolWeight =
+export type SymbolWeight =
   | "ultralight"
   | "light"
   | "thin"
@@ -36,9 +36,9 @@ type SymbolWeight =
   | "bold"
   | "heavy";
 
-type SymbolScale = "small" | "medium" | "large";
+export type SymbolScale = "small" | "medium" | "large";
 
-type ResizeMode =
+export type SymbolResizeMode =
   | "scale-to-fill"
   | "scale-aspect-fit"
   | "scale-aspect-fill"
@@ -61,7 +61,7 @@ export interface SFSymbolProps {
   color?: ColorValue;
   style?: StyleProp<ViewStyle>;
   size?: number;
-  resizeMode?: ResizeMode;
+  resizeMode?: SymbolResizeMode;
   weight?: SymbolWeight;
   scale?: SymbolScale;
   multicolor?: boolean;
