@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { PureComponent } from "react";
 
 import {
   requireNativeComponent,
@@ -74,11 +74,12 @@ type NativeSFSymbolProps = Omit<SFSymbolProps, "color" | "name"> & {
 
 const RNSFSymbol = requireNativeComponent<NativeSFSymbolProps>("RNSfsymbols");
 
-export class SFSymbol extends React.Component<SFSymbolProps> {
+export class SFSymbol extends PureComponent<SFSymbolProps> {
   render() {
     const { name, color, resizeMode, ...props } = this.props;
     const defaultResizeMode =
       !resizeMode && props.size ? "center" : "scale-aspect-fit";
+
     return (
       <RNSFSymbol
         {...props}
