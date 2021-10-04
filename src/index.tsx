@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { PureComponent } from "react";
 
 import {
   requireNativeComponent,
@@ -26,7 +26,7 @@ export enum SFSymbolScale {
   LARGE = "large",
 }
 
-type SymbolWeight =
+export type SymbolWeight =
   | "ultralight"
   | "light"
   | "thin"
@@ -36,9 +36,9 @@ type SymbolWeight =
   | "bold"
   | "heavy";
 
-type SymbolScale = "small" | "medium" | "large";
+export type SymbolScale = "small" | "medium" | "large";
 
-type ResizeMode =
+export type SymbolResizeMode =
   | "scale-to-fill"
   | "scale-aspect-fit"
   | "scale-aspect-fill"
@@ -61,7 +61,7 @@ export interface SFSymbolProps {
   color?: ColorValue;
   style?: StyleProp<ViewStyle>;
   size?: number;
-  resizeMode?: ResizeMode;
+  resizeMode?: SymbolResizeMode;
   weight?: SymbolWeight;
   scale?: SymbolScale;
   multicolor?: boolean;
@@ -74,11 +74,12 @@ type NativeSFSymbolProps = Omit<SFSymbolProps, "color" | "name"> & {
 
 const RNSFSymbol = requireNativeComponent<NativeSFSymbolProps>("RNSfsymbols");
 
-export class SFSymbol extends React.Component<SFSymbolProps> {
+export class SFSymbol extends PureComponent<SFSymbolProps> {
   render() {
     const { name, color, resizeMode, ...props } = this.props;
     const defaultResizeMode =
       !resizeMode && props.size ? "center" : "scale-aspect-fit";
+
     return (
       <RNSFSymbol
         {...props}
