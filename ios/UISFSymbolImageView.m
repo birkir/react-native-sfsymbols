@@ -41,7 +41,10 @@
     }
 
     UIImageSymbolConfiguration *configuration = [UIImageSymbolConfiguration configurationWithPointSize:size weight:weight scale:scale];
-    UIImage *image = [UIImage systemImageNamed:_systemName withConfiguration:configuration];
+    UIImage *image = [UIImage imageNamed:_systemName inBundle:NULL withConfiguration:configuration];
+    if(!image) {
+      image = [UIImage systemImageNamed:_systemName withConfiguration:configuration];
+    }
     
     if (_multicolor) {
       self.tintColor = nil;
