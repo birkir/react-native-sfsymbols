@@ -9,12 +9,12 @@ Pod::Spec.new do |s|
   s.summary               = package["description"]
   s.authors               = package["author"]
   s.homepage              = package["homepage"]
-  
-  s.platforms             = { :ios => "10.0", :tvos => "10.0" }
-  
+
+  s.platforms             = { :ios => "10.0", :tvos => "10.0", :visionos => "1.0" }
+
   s.source                = { :git => package["repository"]["url"], :tag => "v#{s.version}" }
   s.source_files          = "ios/*.{h,m}"
   s.requires_arc = true
-  
+
   s.dependency "React"
 end
